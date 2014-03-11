@@ -976,12 +976,12 @@ namespace FluentAssertions.Specs
             //-----------------------------------------------------------------------------------------------------------
             var subject = new
             {
-                Payload = new byte[] { 1, 2, 3, 4, 5, 6}
+                Payload = new byte[] { 1, 2, 3, 4, 5, 6 }
             };
 
             var expectation = new
             {
-                Payload = new byte[] { 6, 5, 4, 3, 2, 1}
+                Payload = new byte[] { 6, 5, 4, 3, 2, 1 }
             };
 
             //-----------------------------------------------------------------------------------------------------------
@@ -1374,15 +1374,21 @@ namespace FluentAssertions.Specs
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var subject = new object[] { new
+            var subject = new object[]
             {
-                Time = (DateTime?)null
-            }};
+                new
+                {
+                    Time = (DateTime?)null
+                }
+            };
 
-            var other = new object[] { new
+            var other = new object[]
             {
-                Time = (DateTime?)null
-            }};
+                new
+                {
+                    Time = (DateTime?)null
+                }
+            };
 
             //-----------------------------------------------------------------------------------------------------------
             // Act
@@ -1402,15 +1408,21 @@ namespace FluentAssertions.Specs
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var subject = new object[] { new
+            var subject = new object[]
             {
-                Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
-            var other = new object[] { new
+            var other = new object[]
             {
-                Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
             //-----------------------------------------------------------------------------------------------------------
             // Act
@@ -1424,20 +1436,28 @@ namespace FluentAssertions.Specs
         }
 
         [TestMethod]
-        public void When_two_properties_are_datetime_and_both_are_nullable_and_expectation_is_null_it_should_throw_and_state_the_difference()
+        public void
+            When_two_properties_are_datetime_and_both_are_nullable_and_expectation_is_null_it_should_throw_and_state_the_difference
+            ()
         {
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var subject = new object[] { new
+            var subject = new object[]
             {
-                Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
-            var other = new object[] { new
+            var other = new object[]
             {
-                Time = (DateTime?)null
-            }};
+                new
+                {
+                    Time = (DateTime?)null
+                }
+            };
 
             //-----------------------------------------------------------------------------------------------------------
             // Act
@@ -1452,20 +1472,27 @@ namespace FluentAssertions.Specs
         }
 
         [TestMethod]
-        public void When_two_properties_are_datetime_and_both_are_nullable_and_subject_is_null_it_should_throw_and_state_the_difference()
+        public void
+            When_two_properties_are_datetime_and_both_are_nullable_and_subject_is_null_it_should_throw_and_state_the_difference()
         {
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var subject = new object[] { new
+            var subject = new object[]
             {
-                Time = (DateTime?)null
-            }};
+                new
+                {
+                    Time = (DateTime?)null
+                }
+            };
 
-            var other = new object[] { new
+            var other = new object[]
             {
-                Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
             //-----------------------------------------------------------------------------------------------------------
             // Act
@@ -1485,15 +1512,21 @@ namespace FluentAssertions.Specs
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var subject = new object[] { new
+            var subject = new object[]
             {
-                Time = new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
-            var other = new object[] { new
+            var other = new object[]
             {
-                Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
             //-----------------------------------------------------------------------------------------------------------
             // Act
@@ -1507,20 +1540,28 @@ namespace FluentAssertions.Specs
         }
 
         [TestMethod]
-        public void When_two_properties_are_datetime_and_expectation_is_nullable_and_expectation_is_null_it_should_throw_and_state_the_difference()
+        public void
+            When_two_properties_are_datetime_and_expectation_is_nullable_and_expectation_is_null_it_should_throw_and_state_the_difference
+            ()
         {
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var subject = new object[] { new
+            var subject = new object[]
             {
-                Time = new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
-            var other = new object[] { new
+            var other = new object[]
             {
-                Time = (DateTime?)null
-            }};
+                new
+                {
+                    Time = (DateTime?)null
+                }
+            };
 
             //-----------------------------------------------------------------------------------------------------------
             // Act
@@ -1540,15 +1581,21 @@ namespace FluentAssertions.Specs
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var subject = new object[] { new
+            var subject = new object[]
             {
-                Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = (DateTime?)new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
-            var other = new object[] { new
+            var other = new object[]
             {
-                Time = new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
             //-----------------------------------------------------------------------------------------------------------
             // Act
@@ -1562,20 +1609,27 @@ namespace FluentAssertions.Specs
         }
 
         [TestMethod]
-        public void When_two_properties_are_datetime_and_subject_is_nullable_and_subject_is_null_it_should_throw_and_state_the_difference()
+        public void
+            When_two_properties_are_datetime_and_subject_is_nullable_and_subject_is_null_it_should_throw_and_state_the_difference()
         {
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var subject = new object[] { new
+            var subject = new object[]
             {
-                Time = (DateTime?)null
-            }};
+                new
+                {
+                    Time = (DateTime?)null
+                }
+            };
 
-            var other = new object[] { new
+            var other = new object[]
             {
-                Time = new DateTime(2013, 12, 9, 15, 58, 0)
-            }};
+                new
+                {
+                    Time = new DateTime(2013, 12, 9, 15, 58, 0)
+                }
+            };
 
             //-----------------------------------------------------------------------------------------------------------
             // Act
@@ -1958,7 +2012,7 @@ namespace FluentAssertions.Specs
             //-----------------------------------------------------------------------------------------------------------
             act.ShouldNotThrow();
         }
-        
+
         [TestMethod]
         public void When_the_expectation_contains_a_nested_null_it_should_properly_report_the_difference()
         {
@@ -2003,7 +2057,7 @@ namespace FluentAssertions.Specs
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
             //-----------------------------------------------------------------------------------------------------------
-            var subject = new 
+            var subject = new
             {
                 Property = new ClassWithValueSemanticsOnSingleProperty
                 {
@@ -2431,9 +2485,7 @@ namespace FluentAssertions.Specs
         }
 
         [TestMethod]
-        public void
-            When_a_collection_contains_a_reference_to_an_object_that_is_also_in_its_parent_it_should_not_be_treated_as_a_cyclic_reference
-            ()
+        public void When_a_referenced_object_is_also_referenced_by_a_parent_it_should_not_see_that_as_a_cyclice_reference()
         {
             //-----------------------------------------------------------------------------------------------------------
             // Arrange
@@ -2494,6 +2546,55 @@ namespace FluentAssertions.Specs
             }
 
             public string Key { get; protected set; }
+        }
+
+        private class MyCompany
+        {
+            public string Name { get; set; }
+            public MyCompanyLogo Logo { get; set; }
+            public List<MyUser> Users { get; set; }
+        }
+
+        private class MyUser
+        {
+            public string Name { get; set; }
+            public MyCompany Company { get; set; }
+        }
+
+        private class MyCompanyLogo
+        {
+            public string Url { get; set; }
+            public MyCompany Company { get; set; }
+            public MyUser CreatedBy { get; set; }
+        }
+
+        [TestMethod]
+        public void When_the_root_object_is_referenced_from_a_nested_object_it_should_treat_it_as_a_cyclic_reference()
+        {
+            //-----------------------------------------------------------------------------------------------------------
+            // Arrange
+            //-----------------------------------------------------------------------------------------------------------
+            var company1 = new MyCompany { Name = "Company" };
+            var user1 = new MyUser { Name = "User", Company = company1 };
+            company1.Users = new List<MyUser> { user1 };
+            var logo1 = new MyCompanyLogo { Url = "blank", Company = company1, CreatedBy = user1 };
+            company1.Logo = logo1;
+
+            var company2 = new MyCompany { Name = "Company" };
+            var user2 = new MyUser { Name = "User", Company = company2 };
+            company2.Users = new List<MyUser> { user2 };
+            var logo2 = new MyCompanyLogo { Url = "blank", Company = company2, CreatedBy = user2 };
+            company2.Logo = logo2;
+
+            //-----------------------------------------------------------------------------------------------------------
+            // Act
+            //-----------------------------------------------------------------------------------------------------------
+            Action action = () => company1.ShouldBeEquivalentTo(company2, o => o.IgnoringCyclicReferences());
+
+            //-----------------------------------------------------------------------------------------------------------
+            // Assert
+            //-----------------------------------------------------------------------------------------------------------
+            action.ShouldNotThrow();
         }
 
         #endregion
