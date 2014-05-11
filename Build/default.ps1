@@ -60,7 +60,13 @@ task Compile {
 
 task RunTests {
 	TeamCity-Block "Running unit tests" {
-	
+
+	    Run-MsTestWithTeamCityOutput `
+			"$MsTestPath"`
+			".NET 3.5"`
+			"$BaseDirectory\FluentAssertions.Net35.Specs\bin\Release\FluentAssertions.Net35.Specs.dll"`
+			"$BaseDirectory\Default.testsettings"
+
         Run-MsTestWithTeamCityOutput `
 			"$MsTestPath"`
 			".NET 4.0"`
@@ -72,12 +78,6 @@ task RunTests {
 			".NET 4.5"`
 			"$BaseDirectory\FluentAssertions.Net45.Specs\bin\Release\FluentAssertions.Net45.Specs.dll"`
 			"$BaseDirectory\Default.testsettings"
-
-		Run-MsTestWithTeamCityOutput `
-			"$MsTestPath"`
-			"PCL"`
-			"$BaseDirectory\FluentAssertions.Portable.Specs\bin\Release\FluentAssertions.Portable.Specs.dll"`
-			"$BaseDirectory\Default.testsettings"
 	}
 }
 
@@ -87,7 +87,7 @@ task BuildPackage {
 	}
 }
 
-task PublishToMyget -precondition { return ($Branch -eq "master" -or $Branch -eq "<default>") -and ($ApiKey -ne "") } {
+task PublishToMyget -precondition { return ($Branch -eq "master" -or $Branch -eq "<default>" -or $Branch -eq "Release-2.x") -and ($ApiKey -ne "") } {
     TeamCity-Block "Publishing NuGet Package to Myget" {  
 		$packages = Get-ChildItem $PackageDirectory *.nupkg
 		foreach ($package in $packages) {
