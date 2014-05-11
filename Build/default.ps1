@@ -7,7 +7,7 @@
     $BuildNumber = 9999
     $MsBuildLoggerPath = ""
 	$Branch = ""
-	$MsTestPath = "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\MSTest.exe"
+	$MsTestPath = "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\MSTest.exe"
 }
 
 task default -depends Clean, ApplyAssemblyVersioning, ApplyPackageVersioning, Compile, RunTests, BuildPackage, PublishToMyget
