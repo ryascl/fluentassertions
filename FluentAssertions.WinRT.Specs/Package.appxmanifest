@@ -2,7 +2,7 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
   <Identity Name="dda19aee-a167-4459-8d0a-afc981cc7bc1" Publisher="CN=fluentassertions" Version="1.0.0.0" />
   <Properties>
-    <DisplayName>UnitTestLibrary1</DisplayName>
+    <DisplayName>FluentAssertions.WinRT.Specs</DisplayName>
     <PublisherDisplayName>dennis</PublisherDisplayName>
     <Logo>Images\UnitTestStoreLogo.png</Logo>
     <Description>UnitTestLibrary1</Description>
@@ -16,7 +16,7 @@
   </Resources>
   <Applications>
     <Application Id="vstest.executionengine.App" Executable="vstest.executionengine.appcontainer.exe" EntryPoint="vstest.executionengine.App">
-      <VisualElements DisplayName="NoUIEntryPoints" Logo="Images\UnitTestLogo.png" SmallLogo="Images\UnitTestSmallLogo.png" Description="vstest.executionengine.App" ForegroundText="light" BackgroundColor="#0084FF">
+      <VisualElements DisplayName="FluentAssertions.WinRT.Specs" Logo="Images\UnitTestLogo.png" SmallLogo="Images\UnitTestSmallLogo.png" Description="vstest.executionengine.App" ForegroundText="light" BackgroundColor="#0084FF">
         <SplashScreen Image="Images\UnitTestSplashScreen.png" />
       </VisualElements>
     </Application>

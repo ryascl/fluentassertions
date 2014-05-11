@@ -31,17 +31,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <NoWarn>1591; 1572; 1573; 1574; 618</NoWarn>
+    <NoWarn>1591; 1572; 1573; 1574; 0618;</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Package\Lib\winrt45\</OutputPath>
+    <OutputPath>..\Package\Lib\netcore45\</OutputPath>
     <DefineConstants>TRACE;WINRT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Package\Lib\winrt45\FluentAssertions.xml</DocumentationFile>
-    <NoWarn>1591; 1572; 1573; 1574; 618</NoWarn>
+    <DocumentationFile>..\Package\Lib\netcore45\FluentAssertions.xml</DocumentationFile>
+    <NoWarn>1591; 1572; 1573; 1574; 0618;</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>

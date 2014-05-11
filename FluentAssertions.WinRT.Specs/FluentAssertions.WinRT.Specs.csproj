@@ -22,6 +22,7 @@
     </SccProvider>
     <PackageCertificateThumbprint>EF62DAF1210432C81FABD9BFEF9EBAA1BE76CB29</PackageCertificateThumbprint>
     <PackageCertificateKeyFile>FluentAssertions.WinRT.Specs_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <DefaultLanguage>en-us</DefaultLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
