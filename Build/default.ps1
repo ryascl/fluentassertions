@@ -64,7 +64,7 @@ task RunTests {
 	    Run-MsTestWithTeamCityOutput `
 			"$MsTestPath"`
 			".NET 3.5"`
-			"$BaseDirectory\FluentAssertions.Net35.Specs\bin\Release\FluentAssertions.Net35.Specs.dll"`
+			"$BaseDirectory\FluentAssertions.Specs\bin\Release\FluentAssertions.Specs.dll"`
 			"$BaseDirectory\Default.testsettings"
 
         Run-MsTestWithTeamCityOutput `
