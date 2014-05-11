@@ -7,7 +7,7 @@
     $BuildNumber = 9999
     $MsBuildLoggerPath = ""
 	$Branch = ""
-	$MsTestPath = "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\MSTest.exe"
+	$MsTestPath = "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\MSTest.exe"
 }
 
 task default -depends Clean, ApplyAssemblyVersioning, ApplyPackageVersioning, Compile, RunTests, BuildPackage, PublishToMyget
@@ -15,6 +15,7 @@ task default -depends Clean, ApplyAssemblyVersioning, ApplyPackageVersioning, Co
 task Clean {	
     TeamCity-Block "Clean" {
 		Get-ChildItem $PackageDirectory *.nupkg | ForEach { Remove-Item $_.FullName }
+		Remove-Item $PackageDirectory\Lib -Recurse -Force
     }
 }
 
@@ -76,12 +77,6 @@ task RunTests {
 			"$MsTestPath"`
 			"PCL"`
 			"$BaseDirectory\FluentAssertions.Portable.Specs\bin\Release\FluentAssertions.Portable.Specs.dll"`
-			"$BaseDirectory\Default.testsettings"
-
-		Run-MsTestWithTeamCityOutput `
-			"$MsTestPath"`
-			"WinRT"`
-			"$BaseDirectory\FluentAssertions.WinRT.Specs\bin\Release\FluentAssertions.WinRT.Specs.dll"`
 			"$BaseDirectory\Default.testsettings"
 	}
 }
