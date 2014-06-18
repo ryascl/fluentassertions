@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
@@ -41,6 +41,16 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string is exactly the same as another string, including the casing and any leading or trailing whitespace.
+        /// </summary>
+        /// <param name="expected">The expected string.</param>
+        public AndConstraint<StringAssertions> Be(string expected)
+        {
+            return Be(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the <see cref="string"/> is one of the specified <paramref name="validValues"/>.
         /// </summary>
         /// <param name="validValues">
@@ -75,6 +85,18 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the <see cref="string"/> is one of the specified <paramref name="validValues"/>.
+        /// </summary>
+        /// <param name="validValues">
+        /// The values that are valid.
+        /// </param>
+        public AndConstraint<StringAssertions> BeOneOf(IEnumerable<string> validValues)
+        {
+            return BeOneOf(validValues, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string is exactly the same as another string, including any leading or trailing whitespace, with 
         /// the exception of the casing.
         /// </summary>
@@ -100,6 +122,19 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string is exactly the same as another string, including any leading or trailing whitespace, with 
+        /// the exception of the casing.
+        /// </summary>
+        /// <param name="expected">
+        /// The string that the subject is expected to be equivalent to.
+        /// </param>
+        public AndConstraint<StringAssertions> BeEquivalentTo(string expected)
+        {
+            return BeEquivalentTo(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string is not exactly the same as the specified <paramref name="unexpected"/>,
         /// including any leading or trailing whitespace, with the exception of the casing.
         /// </summary>
@@ -122,6 +157,17 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string is not exactly the same as the specified <paramref name="unexpected"/>,
+        /// including any leading or trailing whitespace, with the exception of the casing.
+        /// </summary>
+        /// <param name="unexpected">The string that the subject is not expected to be equivalent to.</param>
+        public AndConstraint<StringAssertions> NotBe(string unexpected)
+        {
+            return NotBe(unexpected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string matches a wildcard pattern.
         /// </summary>
         /// <param name="wildcardPattern">
@@ -140,6 +186,18 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string matches a wildcard pattern.
+        /// </summary>
+        /// <param name="wildcardPattern">
+        /// The wildcard pattern with which the subject is matched, where * and ? have special meanings.
+        /// </param>
+        public AndConstraint<StringAssertions> Match(string wildcardPattern)
+        {
+            return Match(wildcardPattern, null);
+        }
+
 
         /// <summary>
         /// Asserts that a string does not match a wildcard pattern.
@@ -163,6 +221,18 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string does not match a wildcard pattern.
+        /// </summary>
+        /// <param name="wildcardPattern">
+        /// The wildcard pattern with which the subject is matched, where * and ? have special meanings.
+        /// </param>
+        public AndConstraint<StringAssertions> NotMatch(string wildcardPattern)
+        {
+            return NotMatch(wildcardPattern, null);
+        }
+
 
         /// <summary>
         /// Asserts that a string matches a wildcard pattern.
@@ -192,6 +262,18 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string matches a wildcard pattern.
+        /// </summary>
+        /// <param name="wildcardPattern">
+        /// The wildcard pattern with which the subject is matched, where * and ? have special meanings.
+        /// </param>
+        public AndConstraint<StringAssertions> MatchEquivalentOf(string wildcardPattern)
+        {
+            return MatchEquivalentOf(wildcardPattern, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string does not match a wildcard pattern.
         /// </summary>
         /// <param name="wildcardPattern">
@@ -218,6 +300,18 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string does not match a wildcard pattern.
+        /// </summary>
+        /// <param name="wildcardPattern">
+        /// The wildcard pattern with which the subject is matched, where * and ? have special meanings.
+        /// </param>
+        public AndConstraint<StringAssertions> NotMatchEquivalentOf(string wildcardPattern)
+        {
+            return NotMatchEquivalentOf(wildcardPattern, null);
+        }
+
 
         /// <summary>
         /// Asserts that a string matches a regular expression.
@@ -268,6 +362,18 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string matches a regular expression.
+        /// </summary>
+        /// <param name="regularExpression">
+        /// The regular expression with which the subject is matched.
+        /// </param>
+        public AndConstraint<StringAssertions> MatchRegex(string regularExpression)
+        {
+            return MatchRegex(regularExpression, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string does not match a regular expression.
         /// </summary>
         /// <param name="regularExpression">
@@ -316,6 +422,18 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string does not match a regular expression.
+        /// </summary>
+        /// <param name="regularExpression">
+        /// The regular expression with which the subject is matched.
+        /// </param>
+        public AndConstraint<StringAssertions> NotMatchRegex(string regularExpression)
+        {
+            return NotMatchRegex(regularExpression, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string starts exactly with the specified <paramref name="expected"/> value,
         /// including the casing and any leading or trailing whitespace.
         /// </summary>
@@ -345,6 +463,17 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string starts exactly with the specified <paramref name="expected"/> value,
+        /// including the casing and any leading or trailing whitespace.
+        /// </summary>
+        /// <param name="expected">The string that the subject is expected to start with.</param>
+        public AndConstraint<StringAssertions> StartWith(string expected)
+        {
+            return StartWith(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string does not start with the specified <paramref name="unexpected"/> value,
         /// including the casing and any leading or trailing whitespace.
         /// </summary>
@@ -372,6 +501,17 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string does not start with the specified <paramref name="unexpected"/> value,
+        /// including the casing and any leading or trailing whitespace.
+        /// </summary>
+        /// <param name="unexpected">The string that the subject is not expected to start with.</param>
+        public AndConstraint<StringAssertions> NotStartWith(string unexpected)
+        {
+            return NotStartWith(unexpected, null);
+        }
+
 
         /// <summary>
         /// Asserts that a string starts with the specified <paramref name="expected"/>,
@@ -404,6 +544,17 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string starts with the specified <paramref name="expected"/>,
+        /// including any leading or trailing whitespace, with the exception of the casing.
+        /// </summary>
+        /// <param name="expected">The string that the subject is expected to start with.</param>
+        public AndConstraint<StringAssertions> StartWithEquivalent(string expected)
+        {
+            return StartWithEquivalent(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string does not start with the specified <paramref name="unexpected"/> value,
         /// including any leading or trailing whitespace, with the exception of the casing.
         /// </summary>
@@ -431,6 +582,17 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string does not start with the specified <paramref name="unexpected"/> value,
+        /// including any leading or trailing whitespace, with the exception of the casing.
+        /// </summary>
+        /// <param name="unexpected">The string that the subject is not expected to start with.</param>
+        public AndConstraint<StringAssertions> NotStartWithEquivalentOf(string unexpected)
+        {
+            return NotStartWithEquivalentOf(unexpected, null);
+        }
+
 
         /// <summary>
         /// Asserts that a string ends exactly with the specified <paramref name="expected"/>,
@@ -479,6 +641,17 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string ends exactly with the specified <paramref name="expected"/>,
+        /// including the casing and any leading or trailing whitespace.
+        /// </summary>
+        /// <param name="expected">The string that the subject is expected to end with.</param>
+        public AndConstraint<StringAssertions> EndWith(string expected)
+        {
+            return EndWith(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string does not end exactly with the specified <paramref name="unexpected"/>,
         /// including the casing and any leading or trailing whitespace.
         /// </summary>
@@ -516,6 +689,17 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string does not end exactly with the specified <paramref name="unexpected"/>,
+        /// including the casing and any leading or trailing whitespace.
+        /// </summary>
+        /// <param name="unexpected">The string that the subject is not expected to end with.</param>
+        public AndConstraint<StringAssertions> NotEndWith(string unexpected)
+        {
+            return NotEndWith(unexpected, null);
+        }
+
 
         /// <summary>
         /// Asserts that a string ends with the specified <paramref name="expected"/>,
@@ -564,6 +748,17 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string ends with the specified <paramref name="expected"/>,
+        /// including any leading or trailing whitespace, with the exception of the casing.
+        /// </summary>
+        /// <param name="expected">The string that the subject is expected to end with.</param>
+        public AndConstraint<StringAssertions> EndWithEquivalent(string expected)
+        {
+            return EndWithEquivalent(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string does not end with the specified <paramref name="unexpected"/>,
         /// including any leading or trailing whitespace, with the exception of the casing.
         /// </summary>
@@ -603,6 +798,17 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string does not end with the specified <paramref name="unexpected"/>,
+        /// including any leading or trailing whitespace, with the exception of the casing.
+        /// </summary>
+        /// <param name="unexpected">The string that the subject is not expected to end with.</param>
+        public AndConstraint<StringAssertions> NotEndWithEquivalentOf(string unexpected)
+        {
+            return NotEndWithEquivalentOf(unexpected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string contains another (fragment of a) string.
         /// </summary>
         /// <param name="expected">
@@ -636,6 +842,18 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string contains another (fragment of a) string.
+        /// </summary>
+        /// <param name="expected">
+        /// The (fragement of a) string that the current string should contain.
+        /// </param>
+        public AndConstraint<StringAssertions> Contain(string expected)
+        {
+            return Contain(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string contains the specified <paramref name="expected"/>,
         /// including any leading or trailing whitespace, with the exception of the casing.
         /// </summary>
@@ -666,6 +884,17 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string contains the specified <paramref name="expected"/>,
+        /// including any leading or trailing whitespace, with the exception of the casing.
+        /// </summary>
+        /// <param name="expected">The string that the subject is expected to contain.</param>
+        public AndConstraint<StringAssertions> ContainEquivalentOf(string expected)
+        {
+            return ContainEquivalentOf(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that a string does not contain another (fragment of a) string.
@@ -702,6 +931,18 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string does not contain another (fragment of a) string.
+        /// </summary>
+        /// <param name="expected">
+        /// The (fragement of a) string that the current string should not contain.
+        /// </param>
+        public AndConstraint<StringAssertions> NotContain(string expected)
+        {
+            return NotContain(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string does not contain the specified <paramref name="unexpected"/> string,
         /// including any leading or trailing whitespace, with the exception of the casing.
         /// </summary>
@@ -723,6 +964,17 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string does not contain the specified <paramref name="unexpected"/> string,
+        /// including any leading or trailing whitespace, with the exception of the casing.
+        /// </summary>
+        /// <param name="unexpected">The string that the subject is not expected to contain.</param>
+        public AndConstraint<StringAssertions> NotContainEquivalentOf(string unexpected)
+        {
+            return NotContainEquivalentOf(unexpected, null);
+        }
+
 
         static bool Contains(string actual, string expected, StringComparison comparison)
         {
@@ -790,6 +1042,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string has the specified <paramref name="expected"/> length.
+        /// </summary>
+        /// <param name="expected">The expected length of the string</param>
+        public AndConstraint<StringAssertions> HaveLength(int expected)
+        {
+            return HaveLength(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that a string is neither <c>null</c> nor <see cref="string.Empty"/>.

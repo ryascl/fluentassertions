@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 
 using FluentAssertions.Common;
@@ -45,6 +45,16 @@ namespace FluentAssertions.Primitives
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is exactly equal to the <paramref name="expected"/> value.
         /// </summary>
         /// <param name="expected">The expected value</param>
+        public AndConstraint<DateTimeOffsetAssertions> Be(DateTime expected)
+        {
+            return Be(expected, null);
+        }
+
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is exactly equal to the <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The expected value</param>
         /// <param name="because">
         /// A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion 
         /// is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
@@ -62,6 +72,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<DateTimeOffsetAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is exactly equal to the <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The expected value</param>
+        public AndConstraint<DateTimeOffsetAssertions> Be(DateTimeOffset expected)
+        {
+            return Be(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is not equal to the <paramref name="unexpected"/> value.
@@ -84,6 +104,16 @@ namespace FluentAssertions.Primitives
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is not equal to the <paramref name="unexpected"/> value.
         /// </summary>
         /// <param name="unexpected">The unexpected value</param>
+        public AndConstraint<DateTimeOffsetAssertions> NotBe(DateTime unexpected)
+        {
+            return NotBe(unexpected, null);
+        }
+
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is not equal to the <paramref name="unexpected"/> value.
+        /// </summary>
+        /// <param name="unexpected">The unexpected value</param>
         /// <param name="because">
         /// A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion 
         /// is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
@@ -101,6 +131,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<DateTimeOffsetAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is not equal to the <paramref name="unexpected"/> value.
+        /// </summary>
+        /// <param name="unexpected">The unexpected value</param>
+        public AndConstraint<DateTimeOffsetAssertions> NotBe(DateTimeOffset unexpected)
+        {
+            return NotBe(unexpected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is within the specified number of milliseconds (default = 20 ms)
@@ -186,6 +226,16 @@ namespace FluentAssertions.Primitives
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is before the specified value.
         /// </summary>
         /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be before.</param>
+        public AndConstraint<DateTimeOffsetAssertions> BeBefore(DateTime expected)
+        {
+            return BeBefore(expected, null);
+        }
+
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is before the specified value.
+        /// </summary>
+        /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be before.</param>
         /// <param name="because">
         /// A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion 
         /// is needed. If the phrase does not start with the word <i>because</i>, it is prepended automatically.
@@ -206,6 +256,16 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is before the specified value.
+        /// </summary>
+        /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be before.</param>
+        public AndConstraint<DateTimeOffsetAssertions> BeBefore(DateTimeOffset expected)
+        {
+            return BeBefore(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is either on, or before the specified value.
         /// </summary>
         /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be on or before.</param>
@@ -221,6 +281,16 @@ namespace FluentAssertions.Primitives
         {
             return BeOnOrBefore(expected.ToDateTimeOffset(), because, reasonArgs);
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is either on, or before the specified value.
+        /// </summary>
+        /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be on or before.</param>
+        public AndConstraint<DateTimeOffsetAssertions> BeOnOrBefore(DateTime expected)
+        {
+            return BeOnOrBefore(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is either on, or before the specified value.
@@ -246,6 +316,16 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is either on, or before the specified value.
+        /// </summary>
+        /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be on or before.</param>
+        public AndConstraint<DateTimeOffsetAssertions> BeOnOrBefore(DateTimeOffset expected)
+        {
+            return BeOnOrBefore(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is after the specified value.
         /// </summary>
         /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be after.</param>
@@ -261,6 +341,16 @@ namespace FluentAssertions.Primitives
         {
             return BeAfter(expected.ToDateTimeOffset(), because, reasonArgs);
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is after the specified value.
+        /// </summary>
+        /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be after.</param>
+        public AndConstraint<DateTimeOffsetAssertions> BeAfter(DateTime expected)
+        {
+            return BeAfter(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is after the specified value.
@@ -286,6 +376,16 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is after the specified value.
+        /// </summary>
+        /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be after.</param>
+        public AndConstraint<DateTimeOffsetAssertions> BeAfter(DateTimeOffset expected)
+        {
+            return BeAfter(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is either on, or after the specified value.
         /// </summary>
         /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be on or after.</param>
@@ -301,6 +401,16 @@ namespace FluentAssertions.Primitives
         {
             return BeOnOrAfter(expected.ToDateTimeOffset(), because, reasonArgs);
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is either on, or after the specified value.
+        /// </summary>
+        /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be on or after.</param>
+        public AndConstraint<DateTimeOffsetAssertions> BeOnOrAfter(DateTime expected)
+        {
+            return BeOnOrAfter(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is either on, or after the specified value.
@@ -324,6 +434,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<DateTimeOffsetAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> is either on, or after the specified value.
+        /// </summary>
+        /// <param name="expected">The <see cref="DateTime"/> or <see cref="DateTimeOffset"/> that the current value is expected to be on or after.</param>
+        public AndConstraint<DateTimeOffsetAssertions> BeOnOrAfter(DateTimeOffset expected)
+        {
+            return BeOnOrAfter(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> year.
@@ -356,6 +476,16 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> year.
+        /// </summary>
+        /// <param name="expected">The expected year of the current value.</param>
+        public AndConstraint<DateTimeOffsetAssertions> HaveYear(int expected)
+        {
+            return HaveYear(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> month.
         /// </summary>
         /// <param name="expected">The expected month of the current value.</param>
@@ -382,6 +512,16 @@ namespace FluentAssertions.Primitives
             }
             return new AndConstraint<DateTimeOffsetAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> month.
+        /// </summary>
+        /// <param name="expected">The expected month of the current value.</param>
+        public AndConstraint<DateTimeOffsetAssertions> HaveMonth(int expected)
+        {
+            return HaveMonth(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> day.
@@ -413,6 +553,16 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> day.
+        /// </summary>
+        /// <param name="expected">The expected day of the current value.</param>
+        public AndConstraint<DateTimeOffsetAssertions> HaveDay(int expected)
+        {
+            return HaveDay(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> hour.
         /// </summary>
         /// <param name="expected">The expected hour of the current value.</param>
@@ -440,6 +590,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<DateTimeOffsetAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> hour.
+        /// </summary>
+        /// <param name="expected">The expected hour of the current value.</param>
+        public AndConstraint<DateTimeOffsetAssertions> HaveHour(int expected)
+        {
+            return HaveHour(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> minute.
@@ -471,6 +631,16 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> minute.
+        /// </summary>
+        /// <param name="expected">The expected minutes of the current value.</param>
+        public AndConstraint<DateTimeOffsetAssertions> HaveMinute(int expected)
+        {
+            return HaveMinute(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> second.
         /// </summary>
         /// <param name="expected">The expected seconds of the current value.</param>
@@ -498,6 +668,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<DateTimeOffsetAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/> has the <paramref name="expected"/> second.
+        /// </summary>
+        /// <param name="expected">The expected seconds of the current value.</param>
+        public AndConstraint<DateTimeOffsetAssertions> HaveSecond(int expected)
+        {
+            return HaveSecond(expected, null);
+        }
+
 
         /// <summary>
         /// Returns a <see cref="TimeSpanAssertions"/> object that can be used to assert that the current <see cref="DateTime"/> or <see cref="DateTimeOffset"/>

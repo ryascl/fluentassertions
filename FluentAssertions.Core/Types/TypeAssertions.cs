@@ -64,6 +64,16 @@ namespace FluentAssertions.Types
         }
 
         /// <summary>
+        /// Asserts that the current type is equal to the specified <paramref name="expected"/> type.
+        /// </summary>
+        /// <param name="expected">The expected type</param>
+        public AndConstraint<TypeAssertions> Be(Type expected)
+        {
+            return Be(expected, null);
+        }
+
+
+        /// <summary>
         /// Creates an error message in case the specifed <paramref name="actual"/> type differs from the 
         /// <paramref name="expected"/> type.
         /// </summary>
@@ -125,6 +135,16 @@ namespace FluentAssertions.Types
 
             return new AndConstraint<TypeAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the current type is not equal to the specified <paramref name="unexpected"/> type.
+        /// </summary>
+        /// <param name="unexpected">The unexpected type</param>
+        public AndConstraint<TypeAssertions> NotBe(Type unexpected)
+        {
+            return NotBe(unexpected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="Type"/> is decorated with the specified <typeparamref name="TAttribute"/>.

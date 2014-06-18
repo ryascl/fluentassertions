@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -210,6 +210,17 @@ namespace FluentAssertions.Collections
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
 
+        /// <summary>
+        /// Expects the current collection to contain all the same elements in the same order as the collection identified by 
+        /// <paramref name="expected" />. Elements are compared using their <see cref="object.Equals(object)" />.
+        /// </summary>
+        /// <param name="expected">An <see cref="IEnumerable"/> with the expected elements.</param>
+        public AndConstraint<TAssertions> Equal(IEnumerable expected)
+        {
+            return Equal(expected, null);
+        }
+
+
         protected void AssertSubjectEquality<T>(IEnumerable expectation, Func<T, T, bool> predicate,
             string because = "", params object[] reasonArgs)
         {
@@ -313,6 +324,17 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Expects the current collection not to contain all the same elements in the same order as the collection identified by 
+        /// <paramref name="unexpected" />. Elements are compared using their <see cref="object.Equals(object)" />.
+        /// </summary>
+        /// <param name="unexpected">An <see cref="IEnumerable"/> with the elements that are not expected.</param>
+        public AndConstraint<TAssertions> NotEqual(IEnumerable unexpected)
+        {
+            return NotEqual(unexpected, null);
+        }
+
+
+        /// <summary>
         /// Expects the current collection to contain all elements of the collection identified by <paramref name="elements" />,
         /// regardless of the order. Elements are compared using their <see cref="object.Equals(object)" />.
         /// </summary>
@@ -369,6 +391,17 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Expects the current collection to contain all elements of the collection identified by <paramref name="expected" />,
+        /// regardless of the order. Elements are compared using their <see cref="object.Equals(object)" />.
+        /// </summary>
+        /// <param name="expected">An <see cref="IEnumerable"/> with the expected elements.</param>
+        public AndConstraint<TAssertions> BeEquivalentTo(IEnumerable expected)
+        {
+            return BeEquivalentTo(expected, null);
+        }
+
+
+        /// <summary>
         /// Expects the current collection not to contain all elements of the collection identified by <paramref name="unexpected" />,
         /// regardless of the order. Elements are compared using their <see cref="object.Equals(object)" />.
         /// </summary>
@@ -411,6 +444,17 @@ namespace FluentAssertions.Collections
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Expects the current collection not to contain all elements of the collection identified by <paramref name="unexpected" />,
+        /// regardless of the order. Elements are compared using their <see cref="object.Equals(object)" />.
+        /// </summary>
+        /// <param name="unexpected">An <see cref="IEnumerable"/> with the unexpected elements.</param>
+        public AndConstraint<TAssertions> NotBeEquivalentTo(IEnumerable unexpected)
+        {
+            return NotBeEquivalentTo(unexpected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current collection only contains items that are assignable to the type <typeparamref name="T" />.
@@ -540,6 +584,17 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Expects the current collection to contain the specified elements in any order. Elements are compared
+        /// using their <see cref="object.Equals(object)" /> implementation.
+        /// </summary>
+        /// <param name="expected">An <see cref="IEnumerable"/> with the expected elements.</param>
+        public AndConstraint<TAssertions> Contain(IEnumerable expected)
+        {
+            return Contain(expected, null);
+        }
+
+
+        /// <summary>
         /// Expects the current collection to contain the specified elements in the exact same order. Elements are compared
         /// using their <see cref="object.Equals(object)" /> implementation.
         /// </summary>
@@ -599,6 +654,17 @@ namespace FluentAssertions.Collections
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Expects the current collection to contain the specified elements in the exact same order. Elements are compared
+        /// using their <see cref="object.Equals(object)" /> implementation.
+        /// </summary>
+        /// <param name="expected">An <see cref="IEnumerable"/> with the expected elements.</param>
+        public AndConstraint<TAssertions> ContainInOrder(IEnumerable expected)
+        {
+            return ContainInOrder(expected, null);
+        }
+
 
         /// <summary>
         /// Expects the current collection to have all elements in ascending order. Elements are compared
@@ -783,6 +849,16 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts that the collection is a subset of the <paramref name="expectedSuperset" />.
+        /// </summary>
+        /// <param name="expectedSuperset">An <see cref="IEnumerable"/> with the expected superset.</param>
+        public AndConstraint<TAssertions> BeSubsetOf(IEnumerable expectedSuperset)
+        {
+            return BeSubsetOf(expectedSuperset, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the collection is not a subset of the <paramref name="unexpectedSuperset" />.
         /// </summary>
         /// <param name="unexpectedSuperset">An <see cref="IEnumerable"/> with the unexpected superset.</param>
@@ -813,6 +889,16 @@ namespace FluentAssertions.Collections
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Asserts that the collection is not a subset of the <paramref name="unexpectedSuperset" />.
+        /// </summary>
+        /// <param name="unexpectedSuperset">An <see cref="IEnumerable"/> with the unexpected superset.</param>
+        public AndConstraint<TAssertions> NotBeSubsetOf(IEnumerable unexpectedSuperset)
+        {
+            return NotBeSubsetOf(unexpectedSuperset, null);
+        }
+
 
         /// <summary>
         /// Assert that the current collection has the same number of elements as <paramref name="otherCollection" />.
@@ -854,6 +940,16 @@ namespace FluentAssertions.Collections
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Assert that the current collection has the same number of elements as <paramref name="otherCollection" />.
+        /// </summary>
+        /// <param name="otherCollection">The other collection with the same expected number of elements</param>
+        public AndConstraint<TAssertions> HaveSameCount(IEnumerable otherCollection)
+        {
+            return HaveSameCount(otherCollection, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current collection has the supplied <paramref name="element" /> at the 
@@ -932,6 +1028,16 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts that the current collection does not contain the supplied <paramref name="unexpected" /> item.
+        /// </summary>
+        /// <param name="unexpected">The element that is not expected to be in the collection</param>
+        public AndConstraint<TAssertions> NotContain(object unexpected)
+        {
+            return NotContain(unexpected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the collection shares one or more items with the specified <paramref name="otherCollection"/>.
         /// </summary>
         /// <param name="otherCollection">The <see cref="IEnumerable"/> with the expected shared items.</param>
@@ -974,6 +1080,16 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts that the collection shares one or more items with the specified <paramref name="otherCollection"/>.
+        /// </summary>
+        /// <param name="otherCollection">The <see cref="IEnumerable"/> with the expected shared items.</param>
+        public AndConstraint<TAssertions> IntersectWith(IEnumerable otherCollection)
+        {
+            return IntersectWith(otherCollection, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the collection does not share any items with the specified <paramref name="otherCollection"/>.
         /// </summary>
         /// <param name="otherCollection">The <see cref="IEnumerable"/> to compare to.</param>
@@ -1014,6 +1130,16 @@ namespace FluentAssertions.Collections
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Asserts that the collection does not share any items with the specified <paramref name="otherCollection"/>.
+        /// </summary>
+        /// <param name="otherCollection">The <see cref="IEnumerable"/> to compare to.</param>
+        public AndConstraint<TAssertions> NotIntersectWith(IEnumerable otherCollection)
+        {
+            return NotIntersectWith(otherCollection, null);
+        }
+
 
         /// <summary>
         /// Returns the type of the subject the assertion applies on.

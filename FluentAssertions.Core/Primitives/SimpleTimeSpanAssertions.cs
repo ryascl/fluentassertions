@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using FluentAssertions.Execution;
 
@@ -87,6 +87,17 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the time difference of the current <see cref="TimeSpan"/> is equal to the 
+        /// specified <paramref name="expected"/> time.
+        /// </summary>
+        /// <param name="expected">The expected time difference</param>
+        public AndConstraint<SimpleTimeSpanAssertions> Be(TimeSpan expected)
+        {
+            return Be(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the time difference of the current <see cref="TimeSpan"/> is not equal to the 
         /// specified <paramref name="unexpected"/> time.
         /// </summary>
@@ -107,6 +118,17 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<SimpleTimeSpanAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the time difference of the current <see cref="TimeSpan"/> is not equal to the 
+        /// specified <paramref name="unexpected"/> time.
+        /// </summary>
+        /// <param name="unexpected">The unexpected time difference</param>
+        public AndConstraint<SimpleTimeSpanAssertions> NotBe(TimeSpan unexpected)
+        {
+            return NotBe(unexpected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the time difference of the current <see cref="TimeSpan"/> is less than the 
@@ -131,6 +153,17 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the time difference of the current <see cref="TimeSpan"/> is less than the 
+        /// specified <paramref name="expected"/> time.
+        /// </summary>
+        /// <param name="expected">The time difference to which the current value will be compared</param>
+        public AndConstraint<SimpleTimeSpanAssertions> BeLessThan(TimeSpan expected)
+        {
+            return BeLessThan(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the time difference of the current <see cref="TimeSpan"/> is less than or equal to the 
         /// specified <paramref name="expected"/> time.
         /// </summary>
@@ -151,6 +184,17 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<SimpleTimeSpanAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the time difference of the current <see cref="TimeSpan"/> is less than or equal to the 
+        /// specified <paramref name="expected"/> time.
+        /// </summary>
+        /// <param name="expected">The time difference to which the current value will be compared</param>
+        public AndConstraint<SimpleTimeSpanAssertions> BeLessOrEqualTo(TimeSpan expected)
+        {
+            return BeLessOrEqualTo(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the time difference of the current <see cref="TimeSpan"/> is greater than the 
@@ -175,6 +219,17 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the time difference of the current <see cref="TimeSpan"/> is greater than the 
+        /// specified <paramref name="expected"/> time.
+        /// </summary>
+        /// <param name="expected">The time difference to which the current value will be compared</param>
+        public AndConstraint<SimpleTimeSpanAssertions> BeGreaterThan(TimeSpan expected)
+        {
+            return BeGreaterThan(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the time difference of the current <see cref="TimeSpan"/> is greater than or equal to the 
         /// specified <paramref name="expected"/> time.
         /// </summary>
@@ -196,6 +251,17 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<SimpleTimeSpanAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the time difference of the current <see cref="TimeSpan"/> is greater than or equal to the 
+        /// specified <paramref name="expected"/> time.
+        /// </summary>
+        /// <param name="expected">The time difference to which the current value will be compared</param>
+        public AndConstraint<SimpleTimeSpanAssertions> BeGreaterOrEqualTo(TimeSpan expected)
+        {
+            return BeGreaterOrEqualTo(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the current <see cref="TimeSpan"/> is within the specified number of milliseconds (default = 20 ms)

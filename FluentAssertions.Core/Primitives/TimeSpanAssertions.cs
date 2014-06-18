@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -87,6 +87,18 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a <see cref="DateTime"/> occurs a specified amount of time before another <see cref="DateTime"/>.
+        /// </summary>
+        /// <param name="target">
+        /// The <see cref="DateTime"/> to compare the subject with.
+        /// </param>
+        public AndConstraint<DateTimeOffsetAssertions> Before(DateTimeOffset target)
+        {
+            return Before(target, null);
+        }
+
+
+        /// <summary>
         /// Asserts that a <see cref="DateTime"/> occurs a specified amount of time after another <see cref="DateTime"/>.
         /// </summary>
         /// <param name="target">
@@ -125,6 +137,18 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<DateTimeOffsetAssertions>(parentAssertions);
         }
+
+        /// <summary>
+        /// Asserts that a <see cref="DateTime"/> occurs a specified amount of time after another <see cref="DateTime"/>.
+        /// </summary>
+        /// <param name="target">
+        /// The <see cref="DateTime"/> to compare the subject with.
+        /// </param>
+        public AndConstraint<DateTimeOffsetAssertions> After(DateTimeOffset target)
+        {
+            return After(target, null);
+        }
+
 
         /// <summary>
         /// Provides the logic and the display text for a <see cref="TimeSpanCondition"/>.

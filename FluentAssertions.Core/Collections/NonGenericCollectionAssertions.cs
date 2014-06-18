@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Diagnostics;
 using System.Linq;
@@ -52,6 +52,16 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts that the number of items in the collection matches the supplied <paramref name="expected" /> amount.
+        /// </summary>
+        /// <param name="expected">The expected number of items in the collection.</param>
+        public AndConstraint<NonGenericCollectionAssertions> HaveCount(int expected)
+        {
+            return HaveCount(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the number of items in the collection matches a condition stated by the <paramref name="countPredicate"/>.
         /// </summary>
         /// <param name="countPredicate">A predicate that yields the number of items that is expected to be in the collection.</param>
@@ -92,6 +102,16 @@ namespace FluentAssertions.Collections
             return new AndConstraint<NonGenericCollectionAssertions>(this);
         }
 
+        /// <summary>
+        /// Asserts that the number of items in the collection matches a condition stated by the <paramref name="countPredicate"/>.
+        /// </summary>
+        /// <param name="countPredicate">A predicate that yields the number of items that is expected to be in the collection.</param>
+        public AndConstraint<NonGenericCollectionAssertions> HaveCount(Expression<Func<int, bool>> countPredicate)
+        {
+            return HaveCount(countPredicate, null);
+        }
+
+
         private int GetMostLocalCount()
         {
             ICollection castSubject = Subject as ICollection;
@@ -127,5 +147,16 @@ namespace FluentAssertions.Collections
 
             return base.Contain(new [] { expected }, because, reasonArgs);
         }
+
+        /// <summary>
+        /// Asserts that the current collection contains the specified <paramref name="expected"/> object. Elements are compared
+        /// using their <see cref="object.Equals(object)" /> implementation.
+        /// </summary>
+        /// <param name="expected">An object, or <see cref="IEnumerable"/> of objects that are expected to be in the collection.</param>
+        public AndConstraint<NonGenericCollectionAssertions> Contain(object expected)
+        {
+            return Contain(expected, null);
+        }
+
     }
 }

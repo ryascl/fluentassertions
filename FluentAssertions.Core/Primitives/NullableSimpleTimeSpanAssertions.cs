@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using FluentAssertions.Common;
 using FluentAssertions.Execution;
@@ -80,5 +80,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<NullableSimpleTimeSpanAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the value is equal to the specified <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The expected value</param>
+        public AndConstraint<NullableSimpleTimeSpanAssertions> Be(TimeSpan? expected)
+        {
+            return Be(expected, null);
+        }
+
     }
 }

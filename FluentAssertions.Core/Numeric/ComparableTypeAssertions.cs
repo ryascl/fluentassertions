@@ -42,6 +42,18 @@ namespace FluentAssertions.Numeric
         }
 
         /// <summary>
+        /// Asserts that the subject is considered equal to another object according to the implementation of <see cref="IComparable{T}"/>.
+        /// </summary>
+        /// <param name="expected">
+        /// The object to pass to the subject's <see cref="IComparable{T}.CompareTo"/> method.
+        /// </param>
+        public AndConstraint<ComparableTypeAssertions<T>> Be(T expected)
+        {
+            return Be(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the subject is not equal to another object according to its implementation of <see cref="IComparable{T}"/>.
         /// </summary>
         /// <param name="expected">
@@ -63,6 +75,18 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<ComparableTypeAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that the subject is not equal to another object according to its implementation of <see cref="IComparable{T}"/>.
+        /// </summary>
+        /// <param name="expected">
+        /// The object to pass to the subject's <see cref="IComparable{T}.CompareTo"/> method.
+        /// </param>
+        public AndConstraint<ComparableTypeAssertions<T>> NotBe(T expected)
+        {
+            return NotBe(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the subject is less than another object according to its implementation of <see cref="IComparable{T}"/>.
@@ -88,6 +112,18 @@ namespace FluentAssertions.Numeric
         }
 
         /// <summary>
+        /// Asserts that the subject is less than another object according to its implementation of <see cref="IComparable{T}"/>.
+        /// </summary>
+        /// <param name="expected">
+        /// The object to pass to the subject's <see cref="IComparable{T}.CompareTo"/> method.
+        /// </param>
+        public AndConstraint<ComparableTypeAssertions<T>> BeLessThan(T expected)
+        {
+            return BeLessThan(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the subject is less than or equal to another object according to its implementation of <see cref="IComparable{T}"/>.
         /// </summary>
         /// <param name="expected">
@@ -109,6 +145,18 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<ComparableTypeAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that the subject is less than or equal to another object according to its implementation of <see cref="IComparable{T}"/>.
+        /// </summary>
+        /// <param name="expected">
+        /// The object to pass to the subject's <see cref="IComparable{T}.CompareTo"/> method.
+        /// </param>
+        public AndConstraint<ComparableTypeAssertions<T>> BeLessOrEqualTo(T expected)
+        {
+            return BeLessOrEqualTo(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the subject is greater than another object according to its implementation of <see cref="IComparable{T}"/>.
@@ -134,6 +182,18 @@ namespace FluentAssertions.Numeric
         }
 
         /// <summary>
+        /// Asserts that the subject is greater than another object according to its implementation of <see cref="IComparable{T}"/>.
+        /// </summary>
+        /// <param name="expected">
+        /// The object to pass to the subject's <see cref="IComparable{T}.CompareTo"/> method.
+        /// </param>
+        public AndConstraint<ComparableTypeAssertions<T>> BeGreaterThan(T expected)
+        {
+            return BeGreaterThan(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the subject is greater than or equal to another object according to its implementation of <see cref="IComparable{T}"/>.
         /// </summary>
         /// <param name="expected">
@@ -155,6 +215,18 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<ComparableTypeAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that the subject is greater than or equal to another object according to its implementation of <see cref="IComparable{T}"/>.
+        /// </summary>
+        /// <param name="expected">
+        /// The object to pass to the subject's <see cref="IComparable{T}.CompareTo"/> method.
+        /// </param>
+        public AndConstraint<ComparableTypeAssertions<T>> BeGreaterOrEqualTo(T expected)
+        {
+            return BeGreaterOrEqualTo(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that a value is within a range.
@@ -186,6 +258,24 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<ComparableTypeAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that a value is within a range.
+        /// </summary>
+        /// <remarks>
+        /// Where the range is continuous or incremental depends on the actual type of the value. 
+        /// </remarks>
+        /// <param name="minimumValue">
+        /// The minimum valid value of the range.
+        /// </param>
+        /// <param name="maximumValue">
+        /// The maximum valid value of the range.
+        /// </param>
+        public AndConstraint<ComparableTypeAssertions<T>> BeInRange(T minimumValue, T maximumValue)
+        {
+            return BeInRange(minimumValue, maximumValue, null);
+        }
+
 
         /// <summary>
         /// Returns the type of the subject the assertion applies on.

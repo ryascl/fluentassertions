@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using FluentAssertions.Execution;
 
@@ -86,6 +86,16 @@ namespace FluentAssertions.Primitives
         /// <summary>
         /// Asserts that the <see cref="Guid"/> is equal to the <paramref name="expected"/> GUID.
         /// </summary>
+        /// <param name="expected">The expected <see cref="string"/> value to compare the actual value with.</param>
+        public AndConstraint<GuidAssertions> Be(string expected)
+        {
+            return Be(expected, null);
+        }
+
+
+        /// <summary>
+        /// Asserts that the <see cref="Guid"/> is equal to the <paramref name="expected"/> GUID.
+        /// </summary>
         /// <param name="expected">The expected value to compare the actual value with.</param>
         /// <param name="because">
         /// A formatted phrase as is supported by <see cref="string.Format(string,object[])" /> explaining why the assertion 
@@ -103,6 +113,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<GuidAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the <see cref="Guid"/> is equal to the <paramref name="expected"/> GUID.
+        /// </summary>
+        /// <param name="expected">The expected value to compare the actual value with.</param>
+        public AndConstraint<GuidAssertions> Be(Guid expected)
+        {
+            return Be(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the <see cref="Guid"/> is not equal to the <paramref name="unexpected"/> GUID.
@@ -124,6 +144,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<GuidAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the <see cref="Guid"/> is not equal to the <paramref name="unexpected"/> GUID.
+        /// </summary>
+        /// <param name="unexpected">The unexpected value to compare the actual value with.</param>
+        public AndConstraint<GuidAssertions> NotBe(Guid unexpected)
+        {
+            return NotBe(unexpected, null);
+        }
+
 
         #endregion
     }

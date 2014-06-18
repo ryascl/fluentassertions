@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace FluentAssertions.Collections
@@ -74,6 +74,17 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Expects the current collection to contain all elements of the collection identified by <paramref name="expected" />,
+        /// regardless of the order. Elements are compared using their <see cref="object.Equals(object)" />.
+        /// </summary>
+        /// <param name="expected">An <see cref="IEnumerable"/> with the expected elements.</param>
+        public AndConstraint<StringCollectionAssertions> BeEquivalentTo(IEnumerable<string> expected)
+        {
+            return BeEquivalentTo(expected, null);
+        }
+
+
+        /// <summary>
         /// Expects the current collection to contain the specified elements in the exact same order. Elements are compared
         /// using their <see cref="object.Equals(object)" /> implementation.
         /// </summary>
@@ -100,6 +111,17 @@ namespace FluentAssertions.Collections
         {
             return base.ContainInOrder(expected, because, reasonArgs);
         }
+
+        /// <summary>
+        /// Expects the current collection to contain the specified elements in the exact same order. Elements are compared
+        /// using their <see cref="object.Equals(object)" /> implementation.
+        /// </summary>
+        /// <param name="expected">An <see cref="IEnumerable"/> with the expected elements.</param>
+        public AndConstraint<StringCollectionAssertions> ContainInOrder(IEnumerable<string> expected)
+        {
+            return ContainInOrder(expected, null);
+        }
+
 
         /// <summary>
         /// Expects the current collection to contain the specified elements in any order. Elements are compared

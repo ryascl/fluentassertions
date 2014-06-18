@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using FluentAssertions.Execution;
 
@@ -75,6 +75,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<BooleanAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the value is equal to the specified <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The expected value</param>
+        public AndConstraint<BooleanAssertions> Be(bool? expected)
+        {
+            return Be(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the value is not <c>false</c>.

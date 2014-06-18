@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -48,6 +48,16 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<NumericAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that the integral number value is exactly the same as the <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The expected value.</param>
+        public AndConstraint<NumericAssertions<T>> Be(T expected)
+        {
+            return Be(expected, null);
+        }
+
         /// <summary>
         /// Asserts that the integral number value is exactly the same as the <paramref name="expected"/> value.
         /// </summary>
@@ -70,6 +80,16 @@ namespace FluentAssertions.Numeric
         }
 
         /// <summary>
+        /// Asserts that the integral number value is exactly the same as the <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The expected value.</param>
+        public AndConstraint<NumericAssertions<T>> Be(T? expected)
+        {
+            return Be(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the integral number value is not the same as the <paramref name="unexpected"/> value.
         /// </summary>
         /// <param name="unexpected">The unexpected value.</param>
@@ -89,6 +109,16 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<NumericAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that the integral number value is not the same as the <paramref name="unexpected"/> value.
+        /// </summary>
+        /// <param name="unexpected">The unexpected value.</param>
+        public AndConstraint<NumericAssertions<T>> NotBe(T unexpected)
+        {
+            return NotBe(unexpected, null);
+        }
+
         
         /// <summary>
         /// Asserts that the integral number value is not the same as the <paramref name="unexpected"/> value.
@@ -110,6 +140,16 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<NumericAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that the integral number value is not the same as the <paramref name="unexpected"/> value.
+        /// </summary>
+        /// <param name="unexpected">The unexpected value.</param>
+        public AndConstraint<NumericAssertions<T>> NotBe(T? unexpected)
+        {
+            return NotBe(unexpected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the numeric value is greater than or equal to zero.
@@ -173,6 +213,16 @@ namespace FluentAssertions.Numeric
         }
 
         /// <summary>
+        /// Asserts that the numeric value is less than the specified <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The value to compare the current numeric value with.</param>
+        public AndConstraint<NumericAssertions<T>> BeLessThan(T expected)
+        {
+            return BeLessThan(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the numeric value is less than or equal to the specified <paramref name="expected"/> value.
         /// </summary>
         /// <param name="expected">The value to compare the current numeric value with.</param>
@@ -193,6 +243,16 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<NumericAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that the numeric value is less than or equal to the specified <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The value to compare the current numeric value with.</param>
+        public AndConstraint<NumericAssertions<T>> BeLessOrEqualTo(T expected)
+        {
+            return BeLessOrEqualTo(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the numeric value is greater than the specified <paramref name="expected"/> value.
@@ -217,6 +277,16 @@ namespace FluentAssertions.Numeric
         }
 
         /// <summary>
+        /// Asserts that the numeric value is greater than the specified <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The value to compare the current numeric value with.</param>
+        public AndConstraint<NumericAssertions<T>> BeGreaterThan(T expected)
+        {
+            return BeGreaterThan(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the numeric value is greater than or equal to the specified <paramref name="expected"/> value.
         /// </summary>
         /// <param name="expected">The value to compare the current numeric value with.</param>
@@ -237,6 +307,16 @@ namespace FluentAssertions.Numeric
             
             return new AndConstraint<NumericAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that the numeric value is greater than or equal to the specified <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The value to compare the current numeric value with.</param>
+        public AndConstraint<NumericAssertions<T>> BeGreaterOrEqualTo(T expected)
+        {
+            return BeGreaterOrEqualTo(expected, null);
+        }
+
 
         /// <summary>
         /// Asserts that a value is within a range.
@@ -268,6 +348,24 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<NumericAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that a value is within a range.
+        /// </summary>
+        /// <remarks>
+        /// Where the range is continuous or incremental depends on the actual type of the value. 
+        /// </remarks>
+        /// <param name="minimumValue">
+        /// The minimum valid value of the range.
+        /// </param>
+        /// <param name="maximumValue">
+        /// The maximum valid value of the range.
+        /// </param>
+        public AndConstraint<NumericAssertions<T>> BeInRange(T minimumValue, T maximumValue)
+        {
+            return BeInRange(minimumValue, maximumValue, null);
+        }
+
 
         /// <summary>
         /// Asserts that a value is one of the specified <paramref name="validValues"/>.
@@ -303,5 +401,17 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<NumericAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that a value is one of the specified <paramref name="validValues"/>.
+        /// </summary>
+        /// <param name="validValues">
+        /// The values that are valid.
+        /// </param>
+        public AndConstraint<NumericAssertions<T>> BeOneOf(IEnumerable<T> validValues)
+        {
+            return BeOneOf(validValues, null);
+        }
+
     }
 }

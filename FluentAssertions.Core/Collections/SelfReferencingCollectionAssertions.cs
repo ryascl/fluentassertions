@@ -55,6 +55,16 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts that the number of items in the collection matches the supplied <paramref name="expected" /> amount.
+        /// </summary>
+        /// <param name="expected">The expected number of items in the collection.</param>
+        public AndConstraint<TAssertions> HaveCount(int expected)
+        {
+            return HaveCount(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that the number of items in the collection matches a condition stated by the <paramref name="countPredicate"/>.
         /// </summary>
         /// <param name="countPredicate">A predicate that yields the number of items that is expected to be in the collection.</param>
@@ -94,6 +104,16 @@ namespace FluentAssertions.Collections
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Asserts that the number of items in the collection matches a condition stated by the <paramref name="countPredicate"/>.
+        /// </summary>
+        /// <param name="countPredicate">A predicate that yields the number of items that is expected to be in the collection.</param>
+        public AndConstraint<TAssertions> HaveCount(Expression<Func<int, bool>> countPredicate)
+        {
+            return HaveCount(countPredicate, null);
+        }
+
 
         /// <summary>
         /// Asserts that two collections contain the same items in the same order, where equality is determined using a 
@@ -259,6 +279,16 @@ namespace FluentAssertions.Collections
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Asserts that the collection does not contain any items that match the predicate.
+        /// </summary>
+        /// <param name="predicate">A predicate to match the items in the collection against.</param>
+        public AndConstraint<TAssertions> NotContain(Expression<Func<T, bool>> predicate)
+        {
+            return NotContain(predicate, null);
+        }
+
 
 
         /// <summary>

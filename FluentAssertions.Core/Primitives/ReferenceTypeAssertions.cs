@@ -81,6 +81,16 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that an object reference refers to the exact same object as another object reference.
+        /// </summary>
+        /// <param name="expected">The expected object</param>
+        public AndConstraint<TAssertions> BeSameAs(TSubject expected)
+        {
+            return BeSameAs(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that an object reference refers to a different object than another object reference refers to.
         /// </summary>
         /// <param name="unexpected">The unexpected object</param>
@@ -101,6 +111,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Asserts that an object reference refers to a different object than another object reference refers to.
+        /// </summary>
+        /// <param name="unexpected">The unexpected object</param>
+        public AndConstraint<TAssertions> NotBeSameAs(TSubject unexpected)
+        {
+            return NotBeSameAs(unexpected, null);
+        }
+
 
         /// <summary>
         /// Asserts that the object is of the specified type <typeparamref name="T"/>.
@@ -144,6 +164,18 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Asserts that the object is of the specified type <paramref name="expectedType"/>.
+        /// </summary>
+        /// <param name="expectedType">
+        /// The type that the subject is supposed to be of.
+        /// </param>
+        public AndConstraint<TAssertions> BeOfType(Type expectedType)
+        {
+            return BeOfType(expectedType, null);
+        }
+
 
         /// <summary>
         /// Asserts that the object is assignable to a variable of type <typeparamref name="T"/>.

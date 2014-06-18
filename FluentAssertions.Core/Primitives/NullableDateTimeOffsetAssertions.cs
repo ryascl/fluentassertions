@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 
 using FluentAssertions.Common;
@@ -80,6 +80,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<DateTimeOffsetAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the value is equal to the specified <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The expected value</param>
+        public AndConstraint<DateTimeOffsetAssertions> Be(DateTimeOffset? expected)
+        {
+            return Be(expected, null);
+        }
+
         
         /// <summary>
         /// Asserts that the value is equal to the specified <paramref name="expected"/> value.
@@ -96,5 +106,15 @@ namespace FluentAssertions.Primitives
         {
             return Be(expected.HasValue ? expected.Value.ToDateTimeOffset() : (DateTimeOffset?)null, because, reasonArgs);
         }
+
+        /// <summary>
+        /// Asserts that the value is equal to the specified <paramref name="expected"/> value.
+        /// </summary>
+        /// <param name="expected">The expected value</param>
+        public AndConstraint<DateTimeOffsetAssertions> Be(DateTime? expected)
+        {
+            return Be(expected, null);
+        }
+
     }
 }

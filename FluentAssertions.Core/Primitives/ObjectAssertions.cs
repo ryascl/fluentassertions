@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Xml.Serialization;
@@ -42,6 +42,16 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that an object equals another object using its <see cref="object.Equals(object)" /> implementation.
+        /// </summary>
+        /// <param name="expected">The expected value</param>
+        public AndConstraint<ObjectAssertions> Be(object expected)
+        {
+            return Be(expected, null);
+        }
+
+
+        /// <summary>
         /// Asserts that an object does not equal another object using it's <see cref="object.Equals(object)" /> method.
         /// </summary>
         /// <param name="unexpected">The unexpected value</param>
@@ -61,6 +71,16 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<ObjectAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that an object does not equal another object using it's <see cref="object.Equals(object)" /> method.
+        /// </summary>
+        /// <param name="unexpected">The unexpected value</param>
+        public AndConstraint<ObjectAssertions> NotBe(object unexpected)
+        {
+            return NotBe(unexpected, null);
+        }
+
 
         /// <summary>
         /// Returns the type of the subject the assertion applies on.
