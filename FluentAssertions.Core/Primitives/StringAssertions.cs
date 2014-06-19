@@ -1002,6 +1002,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string is <see cref="string.Empty"/>.
+        /// </summary>
+        public AndConstraint<StringAssertions> BeEmpty()
+        {
+            return BeEmpty(null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string is not <see cref="string.Empty"/>.
         /// </summary>
         /// <param name="because">
@@ -1020,6 +1029,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string is not <see cref="string.Empty"/>.
+        /// </summary>
+        public AndConstraint<StringAssertions> NotBeEmpty()
+        {
+            return NotBeEmpty(null);
+        }
+
 
         /// <summary>
         /// Asserts that a string has the specified <paramref name="expected"/> length.
@@ -1074,6 +1092,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string is neither <c>null</c> nor <see cref="string.Empty"/>.
+        /// </summary>
+        public AndConstraint<StringAssertions> NotBeNullOrEmpty()
+        {
+            return NotBeNullOrEmpty(null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string is either <c>null</c> or <see cref="string.Empty"/>.
         /// </summary>
         /// <param name="because">
@@ -1092,6 +1119,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string is either <c>null</c> or <see cref="string.Empty"/>.
+        /// </summary>
+        public AndConstraint<StringAssertions> BeNullOrEmpty()
+        {
+            return BeNullOrEmpty(null);
+        }
+
 
         /// <summary>
         /// Asserts that a string is neither <c>null</c> nor <see cref="string.Empty"/> nor white space
@@ -1114,6 +1150,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a string is neither <c>null</c> nor <see cref="string.Empty"/> nor white space
+        /// </summary>
+        public AndConstraint<StringAssertions> NotBeNullOrWhiteSpace()
+        {
+            return NotBeNullOrWhiteSpace(null);
+        }
+
+
+        /// <summary>
         /// Asserts that a string is either <c>null</c> or <see cref="string.Empty"/> or white space
         /// </summary>
         /// <param name="because">
@@ -1132,6 +1177,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<StringAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a string is either <c>null</c> or <see cref="string.Empty"/> or white space
+        /// </summary>
+        public AndConstraint<StringAssertions> BeNullOrWhiteSpace()
+        {
+            return BeNullOrWhiteSpace(null);
+        }
+
 
         private static bool IsBlank(string value)
         {

@@ -47,6 +47,15 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts that the collection does not contain any items.
+        /// </summary>
+        public AndConstraint<TAssertions> BeEmpty()
+        {
+            return BeEmpty(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the collection contains at least 1 item.
         /// </summary>
         /// <param name="because">
@@ -76,6 +85,15 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts that the collection contains at least 1 item.
+        /// </summary>
+        public AndConstraint<TAssertions> NotBeEmpty()
+        {
+            return NotBeEmpty(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the collection is null or does not contain any items.
         /// </summary>
         /// <param name="because">
@@ -99,6 +117,15 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts that the collection is null or does not contain any items.
+        /// </summary>
+        public AndConstraint<TAssertions> BeNullOrEmpty()
+        {
+            return BeNullOrEmpty(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the collection is not null and contains at least 1 item.
         /// </summary>
         /// <param name="because">
@@ -113,6 +140,15 @@ namespace FluentAssertions.Collections
             return NotBeNull(because, reasonArgs)
                 .And.NotBeEmpty(because, reasonArgs);
         }
+
+        /// <summary>
+        /// Asserts that the collection is not null and contains at least 1 item.
+        /// </summary>
+        public AndConstraint<TAssertions> NotBeNullOrEmpty()
+        {
+            return NotBeNullOrEmpty(null);
+        }
+
 
         /// <summary>
         /// Asserts that the collection does not contain any duplicate items.
@@ -149,6 +185,15 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts that the collection does not contain any duplicate items.
+        /// </summary>
+        public AndConstraint<TAssertions> OnlyHaveUniqueItems()
+        {
+            return OnlyHaveUniqueItems(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the collection does not contain any <c>null</c> items.
         /// </summary>
         /// <param name="because">
@@ -180,6 +225,15 @@ namespace FluentAssertions.Collections
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Asserts that the collection does not contain any <c>null</c> items.
+        /// </summary>
+        public AndConstraint<TAssertions> NotContainNulls()
+        {
+            return NotContainNulls(null);
+        }
+
 
         /// <summary>
         /// Expects the current collection to contain all the same elements in the same order as the collection identified by 
@@ -683,6 +737,16 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Expects the current collection to have all elements in ascending order. Elements are compared
+        /// using their <see cref="object.Equals(object)" /> implementation.
+        /// </summary>
+        public AndConstraint<TAssertions> BeInAscendingOrder()
+        {
+            return BeInAscendingOrder(null);
+        }
+
+
+        /// <summary>
         /// Expects the current collection to have all elements in descending order. Elements are compared
         /// using their <see cref="object.Equals(object)" /> implementation.
         /// </summary>
@@ -697,6 +761,16 @@ namespace FluentAssertions.Collections
         {
             return BeInOrder(SortOrder.Descending, because, reasonArgs);
         }
+
+        /// <summary>
+        /// Expects the current collection to have all elements in descending order. Elements are compared
+        /// using their <see cref="object.Equals(object)" /> implementation.
+        /// </summary>
+        public AndConstraint<TAssertions> BeInDescendingOrder()
+        {
+            return BeInDescendingOrder(null);
+        }
+
 
         /// <summary>
         /// Expects the current collection to have all elements in the specified <paramref name="expectedOrder"/>.
@@ -750,6 +824,16 @@ namespace FluentAssertions.Collections
         }
 
         /// <summary>
+        /// Asserts the current collection does not have all elements in ascending order. Elements are compared
+        /// using their <see cref="object.Equals(object)" /> implementation.
+        /// </summary>
+        public AndConstraint<TAssertions> NotBeAscendingInOrder()
+        {
+            return NotBeAscendingInOrder(null);
+        }
+
+
+        /// <summary>
         /// Asserts the current collection does not have all elements in descending order. Elements are compared
         /// using their <see cref="object.Equals(object)" /> implementation.
         /// </summary>
@@ -764,6 +848,16 @@ namespace FluentAssertions.Collections
         {
             return NotBeInOrder(SortOrder.Descending, because, reasonArgs);
         }
+
+        /// <summary>
+        /// Asserts the current collection does not have all elements in descending order. Elements are compared
+        /// using their <see cref="object.Equals(object)" /> implementation.
+        /// </summary>
+        public AndConstraint<TAssertions> NotBeDescendingInOrder()
+        {
+            return NotBeDescendingInOrder(null);
+        }
+
 
         /// <summary>
         /// Asserts the current collection does not have all elements in ascending order. Elements are compared

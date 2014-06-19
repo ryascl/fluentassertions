@@ -36,6 +36,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a nullable <see cref="Guid"/> value is not <c>null</c>.
+        /// </summary>
+        public AndConstraint<NullableGuidAssertions> HaveValue()
+        {
+            return HaveValue(null);
+        }
+
+
+        /// <summary>
         /// Asserts that a nullable <see cref="Guid"/> value is <c>null</c>.
         /// </summary>
         /// <param name="because">
@@ -54,6 +63,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<NullableGuidAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a nullable <see cref="Guid"/> value is <c>null</c>.
+        /// </summary>
+        public AndConstraint<NullableGuidAssertions> NotHaveValue()
+        {
+            return NotHaveValue(null);
+        }
+
 
         /// <summary>
         /// Asserts that the value is equal to the specified <paramref name="expected"/> value.

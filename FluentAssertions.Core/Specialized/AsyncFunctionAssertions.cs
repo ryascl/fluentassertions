@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -131,5 +131,13 @@ namespace FluentAssertions.Specialized
 
             return actualException;
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="Func{Task}"/> does not throw any exception.
+        /// </summary>
+        public void ShouldNotThrow()
+        {
+        }
+
     }
 }

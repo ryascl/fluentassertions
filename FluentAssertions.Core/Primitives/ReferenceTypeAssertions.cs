@@ -39,6 +39,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the current object has not been initialized yet.
+        /// </summary>
+        public AndConstraint<TAssertions> BeNull()
+        {
+            return BeNull(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the current object has been initialized.
         /// </summary>
         /// <param name="because">
@@ -57,6 +66,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<TAssertions>((TAssertions)this);
         }
+
+        /// <summary>
+        /// Asserts that the current object has been initialized.
+        /// </summary>
+        public AndConstraint<TAssertions> NotBeNull()
+        {
+            return NotBeNull(null);
+        }
+
 
         /// <summary>
         /// Asserts that an object reference refers to the exact same object as another object reference.

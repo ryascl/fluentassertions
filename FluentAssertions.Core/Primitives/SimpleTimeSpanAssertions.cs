@@ -45,6 +45,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the time difference of the current <see cref="TimeSpan"/> is greater than zero.
+        /// </summary>
+        public AndConstraint<SimpleTimeSpanAssertions> BePositive()
+        {
+            return BePositive(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the time difference of the current <see cref="TimeSpan"/> is less than zero.
         /// </summary>
         /// <param name="because">
@@ -63,6 +72,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<SimpleTimeSpanAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the time difference of the current <see cref="TimeSpan"/> is less than zero.
+        /// </summary>
+        public AndConstraint<SimpleTimeSpanAssertions> BeNegative()
+        {
+            return BeNegative(null);
+        }
+
 
         /// <summary>
         /// Asserts that the time difference of the current <see cref="TimeSpan"/> is equal to the 

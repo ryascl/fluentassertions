@@ -55,6 +55,15 @@ namespace FluentAssertions.Types
         }
 
         /// <summary>
+        /// Asserts that the selected properties are virtual.
+        /// </summary>
+        public AndConstraint<PropertyInfoSelectorAssertions> BeVirtual()
+        {
+            return BeVirtual(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the selected properties have a setter.
         /// </summary>
         /// <param name="because">
@@ -79,6 +88,15 @@ namespace FluentAssertions.Types
 
             return new AndConstraint<PropertyInfoSelectorAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the selected properties have a setter.
+        /// </summary>
+        public AndConstraint<PropertyInfoSelectorAssertions> BeWritable()
+        {
+            return BeWritable(null);
+        }
+
 
         private PropertyInfo[] GetAllReadOnlyPropertiesFromSelection()
         {

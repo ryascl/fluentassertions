@@ -41,6 +41,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the value is <c>false</c>.
+        /// </summary>
+        public AndConstraint<BooleanAssertions> BeFalse()
+        {
+            return BeFalse(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the value is <c>true</c>.
         /// </summary>
         /// <param name="because">
@@ -59,6 +68,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<BooleanAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the value is <c>true</c>.
+        /// </summary>
+        public AndConstraint<BooleanAssertions> BeTrue()
+        {
+            return BeTrue(null);
+        }
+
 
         /// <summary>
         /// Asserts that the value is equal to the specified <paramref name="expected"/> value.

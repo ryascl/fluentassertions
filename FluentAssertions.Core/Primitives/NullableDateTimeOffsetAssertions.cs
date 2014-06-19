@@ -41,6 +41,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a nullable <see cref="DateTime"/> or <see cref="DateTimeOffset"/> value is not <c>null</c>.
+        /// </summary>
+        public AndConstraint<NullableDateTimeOffsetAssertions> HaveValue()
+        {
+            return HaveValue(null);
+        }
+
+
+        /// <summary>
         /// Asserts that a nullable <see cref="DateTime"/> or <see cref="DateTimeOffset"/> value is <c>null</c>.
         /// </summary>
         /// <param name="because">
@@ -59,6 +68,15 @@ namespace FluentAssertions.Primitives
             
             return new AndConstraint<NullableDateTimeOffsetAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a nullable <see cref="DateTime"/> or <see cref="DateTimeOffset"/> value is <c>null</c>.
+        /// </summary>
+        public AndConstraint<NullableDateTimeOffsetAssertions> NotHaveValue()
+        {
+            return NotHaveValue(null);
+        }
+
 
         /// <summary>
         /// Asserts that the value is equal to the specified <paramref name="expected"/> value.

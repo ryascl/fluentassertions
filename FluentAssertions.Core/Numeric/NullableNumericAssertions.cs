@@ -31,6 +31,15 @@ namespace FluentAssertions.Numeric
         }
 
         /// <summary>
+        /// Asserts that a nullable numeric value is not <c>null</c>.
+        /// </summary>
+        public AndConstraint<NullableNumericAssertions<T>> HaveValue()
+        {
+            return HaveValue(null);
+        }
+
+
+        /// <summary>
         /// Asserts that a nullable numeric value is <c>null</c>.
         /// </summary>
         /// <param name="because">
@@ -49,5 +58,14 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<NullableNumericAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that a nullable numeric value is <c>null</c>.
+        /// </summary>
+        public AndConstraint<NullableNumericAssertions<T>> NotHaveValue()
+        {
+            return NotHaveValue(null);
+        }
+
     }
 }

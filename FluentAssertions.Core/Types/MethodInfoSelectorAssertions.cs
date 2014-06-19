@@ -55,6 +55,15 @@ namespace FluentAssertions.Types
             return new AndConstraint<MethodInfoSelectorAssertions>(this);
         }
 
+        /// <summary>
+        /// Asserts that the selected methods are virtual.
+        /// </summary>
+        public AndConstraint<MethodInfoSelectorAssertions> BeVirtual()
+        {
+            return BeVirtual(null);
+        }
+
+
         private MethodInfo[] GetAllNonVirtualMethodsFromSelection()
         {
             var query =

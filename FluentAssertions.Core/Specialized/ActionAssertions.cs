@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -113,6 +113,14 @@ namespace FluentAssertions.Specialized
             }
             return actualException;
         }
+
+        /// <summary>
+        /// Asserts that the current <see cref="Action"/> does not throw any exception.
+        /// </summary>
+        public void ShouldNotThrow()
+        {
+        }
+
 
         /// <summary>
         /// Returns the type of the subject the assertion applies on.

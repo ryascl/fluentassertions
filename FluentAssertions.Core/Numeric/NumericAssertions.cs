@@ -172,6 +172,15 @@ namespace FluentAssertions.Numeric
         }
 
         /// <summary>
+        /// Asserts that the numeric value is greater than or equal to zero.
+        /// </summary>
+        public AndConstraint<NumericAssertions<T>> BePositive()
+        {
+            return BePositive(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the numeric value is less than zero.
         /// </summary>
         /// <param name="because">
@@ -190,6 +199,15 @@ namespace FluentAssertions.Numeric
 
             return new AndConstraint<NumericAssertions<T>>(this);
         }
+
+        /// <summary>
+        /// Asserts that the numeric value is less than zero.
+        /// </summary>
+        public AndConstraint<NumericAssertions<T>> BeNegative()
+        {
+            return BeNegative(null);
+        }
+
 
         /// <summary>
         /// Asserts that the numeric value is less than the specified <paramref name="expected"/> value.

@@ -36,6 +36,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that a nullable boolean value is not <c>null</c>.
+        /// </summary>
+        public AndConstraint<NullableBooleanAssertions> HaveValue()
+        {
+            return HaveValue(null);
+        }
+
+
+        /// <summary>
         /// Asserts that a nullable boolean value is <c>null</c>.
         /// </summary>
         /// <param name="because">
@@ -54,6 +63,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<NullableBooleanAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that a nullable boolean value is <c>null</c>.
+        /// </summary>
+        public AndConstraint<NullableBooleanAssertions> NotHaveValue()
+        {
+            return NotHaveValue(null);
+        }
+
 
         /// <summary>
         /// Asserts that the value is equal to the specified <paramref name="expected"/> value.
@@ -107,6 +125,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the value is not <c>false</c>.
+        /// </summary>
+        public AndConstraint<BooleanAssertions> NotBeFalse()
+        {
+            return NotBeFalse(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the value is not <c>true</c>.
         /// </summary>
         /// <param name="because">
@@ -125,5 +152,14 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<BooleanAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the value is not <c>true</c>.
+        /// </summary>
+        public AndConstraint<BooleanAssertions> NotBeTrue()
+        {
+            return NotBeTrue(null);
+        }
+
     }
 }

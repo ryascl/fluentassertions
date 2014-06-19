@@ -43,6 +43,15 @@ namespace FluentAssertions.Primitives
         }
 
         /// <summary>
+        /// Asserts that the <see cref="Guid"/> is <see cref="Guid.Empty"/>.
+        /// </summary>
+        public AndConstraint<GuidAssertions> BeEmpty()
+        {
+            return BeEmpty(null);
+        }
+
+
+        /// <summary>
         /// Asserts that the <see cref="Guid"/> is not <see cref="Guid.Empty"/>.
         /// </summary>
         /// <param name="because">
@@ -61,6 +70,15 @@ namespace FluentAssertions.Primitives
 
             return new AndConstraint<GuidAssertions>(this);
         }
+
+        /// <summary>
+        /// Asserts that the <see cref="Guid"/> is not <see cref="Guid.Empty"/>.
+        /// </summary>
+        public AndConstraint<GuidAssertions> NotBeEmpty()
+        {
+            return NotBeEmpty(null);
+        }
+
 
         #endregion
 
